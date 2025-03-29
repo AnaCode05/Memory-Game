@@ -9,12 +9,16 @@
     <string name="play_again">Wrong answer, play again!</string>
     <string name="lets_play">Let\'s Play!</string>
     <string name="instructions_title">How to Play</string>
+    <string name="enter_name">Enter Name for the High Scores List</string>
     <string name="instructions">
-        1. Try to memorize the 4 highlighted tiles that will appear on the grid for 3 seconds.\n
+        1. Try to memorize the 4 highlighted tiles that appear on the grid for 3 seconds.\n
         2. You will then try to select the same tiles that were highlighted within 5 seconds.\n
         3. If you select any incorrect tiles or the time runs out, the game will end.\n
-        4. If you select the correct tiles, you will
-
+        4. If you select the correct tiles, you will move on to the next level and gain 10 points.\n
+        5. After 3 successful rounds, you now need to select 5 tiles and will gain 20 points.\n
+        6. Keep going for as long as you can.
     </string>
-
+    <string name="high_scores_list">High Scores List Here</string>
+    <string name="top_3_winners">Top 3 Winners</string>
+    <string name="trophy_image">Trophy Image</string>
 </resources>
