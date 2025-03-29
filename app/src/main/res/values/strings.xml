@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PROG3210_A3_AnaIsakov</string>
+    <string name="memory_game">Memory Game</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="home">Home</string>
+    <string name="game">Game</string>
+    <string name="high_scores">High Scores</string>
+    <string name="play_again">Wrong answer, play again!</string>
+    <string name="lets_play">Let\'s Play!</string>
+    <string name="instructions_title">How to Play</string>
+    <string name="instructions">
+        1. Try to memorize the 4 highlighted tiles that will appear on the grid for 3 seconds.\n
+        2. You will then try to select the same tiles that were highlighted within 5 seconds.\n
+        3. If you select any incorrect tiles or the time runs out, the game will end.\n
+        4. If you select the correct tiles, you will
+
+    </string>
+
+</resources>
