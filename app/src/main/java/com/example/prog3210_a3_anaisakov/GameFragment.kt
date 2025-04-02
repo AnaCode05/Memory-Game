@@ -1,32 +1,66 @@
 package com.example.prog3210_a3_anaisakov
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import kotlin.random.Random
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [GameFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GameFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    // 2D array to track the status of the grid
+    var grid: Array<IntArray> = arrayOf(
+        intArrayOf(0, 0, 0, 0, 0, 0),
+        intArrayOf(0, 0, 0, 0, 0, 0),
+        intArrayOf(0, 0, 0, 0, 0, 0),
+        intArrayOf(0, 0, 0, 0, 0, 0),
+        intArrayOf(0, 0, 0, 0, 0, 0),
+        intArrayOf(0, 0, 0, 0, 0, 0)
+    )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+
+    fun resetGrid() {
+        for (row in grid.get(0).indices) {
+            for (col in grid.indices) {
+                grid[row][col] = 0
+            }
         }
+    }
+
+    fun setColours() {
+        for (row in grid.get(0).indices) {
+            for (col in grid.indices) {
+                if (grid[row][col] == 0) {
+                    // set square colour to white
+
+                } else {
+                    // set square colour to blue
+
+                }
+            }
+        }
+    }
+
+    fun makeRound() {
+        // get random grid rows
+        var rows = IntArray(3) {
+            Random.nextInt(1,7);
+            Random.nextInt(1,7);
+            Random.nextInt(1,7)
+        } //.asList()
+        Log.d("TAG", "row: "+rows[0])
+        // get random grid columns
+        var columns = IntArray(3) {
+            Random.nextInt(1,7);
+            Random.nextInt(1,7);
+            Random.nextInt(1,7)
+        } //.asList()
+        Log.d("TAG", "column: "+columns[0])
+
+        grid[rows[0]][columns[0]] = 1
+        Log.d("TAG", "grid: "+grid.get(rows[0]).get(columns[0]))
     }
 
     override fun onCreateView(
@@ -34,26 +68,7 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        makeRound()
         return inflater.inflate(R.layout.fragment_game, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GameFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GameFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
